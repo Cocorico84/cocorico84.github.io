@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#f7f6f0">
+	<meta name="description" content="Corentin's corner of the internet: projects, experiments, and things worth keeping.">
+	<title>Corentin - a small corner of the internet</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+	<style>
+		:root {
+			color-scheme: light;
+			--paper: #f7f6f0;
+			--ink: #20251e;
+			--muted: #73776e;
+			--line: #dedfd5;
+			--green: #c8e568;
+			--red: #df6447;
+			--blue: #b8d8dc;
+			--serif: "Fraunces", Georgia, serif;
+			--sans: "DM Sans", sans-serif;
+			--mono: "DM Mono", monospace;
+		}
+
+		* { box-sizing: border-box; }
+		html { scroll-behavior: smooth; }
+
+		body {
+			margin: 0;
+			background-color: var(--paper);
+			background-image: radial-gradient(#d7d8ce 0.65px, transparent 0.65px);
+			background-size: 9px 9px;
+			color: var(--ink);
+			font-family: var(--sans);
+			-webkit-font-smoothing: antialiased;
+		}
+
+		a { color: inherit; }
+
+		.wrap {
+			width: min(1080px, calc(100% - 64px));
+			margin-inline: auto;
+		}
+
+		.topbar {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			min-height: 82px;
+			border-bottom: 1px solid var(--line);
+		}
+
+		.wordmark {
+			display: inline-flex;
+			align-items: center;
+			gap: 11px;
+			text-decoration: none;
+			font-size: 14px;
+			font-weight: 700;
+		}
+
+		.mark {
+			display: grid;
+			width: 32px;
+			height: 32px;
+			place-items: center;
+			background: var(--green);
+			border: 1px solid var(--ink);
+			border-radius: 50%;
+			font-family: var(--serif);
+			font-size: 18px;
+		}
+
+		.nav {
+			display: flex;
+			align-items: center;
+			gap: 30px;
+			font-size: 13px;
+			font-weight: 600;
+		}
+
+		.nav a { text-decoration: none; }
+		.nav a:hover { color: #6e8230; }
+
+		.nav .github-link {
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+		}
+
+		.github-link svg { width: 17px; height: 17px; }
+
+		.hero {
+			display: grid;
+			grid-template-columns: 1fr 320px;
+			align-items: center;
+			gap: 72px;
+			min-height: 510px;
+			padding-block: 68px 78px;
+		}
+
+		.eyebrow, .section-kicker, .portrait-note, .repo-meta, .footer-note {
+			font-family: var(--mono);
+			font-size: 11px;
+			letter-spacing: 0;
+			text-transform: uppercase;
+		}
+
+		.eyebrow {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			margin: 0 0 22px;
+			color: var(--muted);
+		}
+
+		.eyebrow::before {
+			width: 8px;
+			height: 8px;
+			background: var(--red);
+			border-radius: 50%;
+			content: "";
+		}
+
+		h1 {
+			max-width: 650px;
+			margin: 0;
+			font-family: var(--serif);
+			font-size: 76px;
+			font-weight: 500;
+			line-height: 0.99;
+		}
+
+		h1 span {
+			position: relative;
+			z-index: 0;
+			white-space: nowrap;
+		}
+
+		h1 span::after {
+			position: absolute;
+			z-index: -1;
+			right: -4px;
+			bottom: 4px;
+			left: -4px;
+			height: 20px;
+			background: var(--green);
+			content: "";
+			transform: rotate(-1.5deg);
+		}
+
+		.intro {
+			max-width: 440px;
+			margin: 26px 0 0;
+			color: #575c53;
+			font-size: 16px;
+			line-height: 1.75;
+		}
+
+		.hero-links {
+			display: flex;
+			align-items: center;
+			gap: 22px;
+			margin-top: 29px;
+		}
+
+		.button-link {
+			display: inline-flex;
+			min-height: 45px;
+			align-items: center;
+			gap: 10px;
+			padding: 0 17px;
+			background: var(--ink);
+			border: 1px solid var(--ink);
+			border-radius: 3px;
+			color: white;
+			font-size: 13px;
+			font-weight: 600;
+			text-decoration: none;
+			transition: background 160ms ease, transform 160ms ease;
+		}
+
+		.button-link:hover { background: #3a4630; transform: translateY(-2px); }
+
+		.text-link {
+			font-size: 13px;
+			font-weight: 600;
+			text-decoration-color: #a5aa9c;
+			text-underline-offset: 4px;
+		}
+
+		.portrait-wrap {
+			position: relative;
+			width: 260px;
+			justify-self: center;
+			padding: 12px;
+			background: #fffefa;
+			border: 1px solid #d3d4ca;
+			box-shadow: 10px 10px 0 var(--blue);
+			transform: rotate(3deg);
+			animation: arrive 650ms 100ms both cubic-bezier(.2,.75,.3,1);
+		}
+
+		.portrait-wrap img {
+			display: block;
+			width: 100%;
+			aspect-ratio: 1;
+			background: #dce4d2;
+			object-fit: cover;
+			filter: saturate(.82);
+		}
+
+		.portrait-note {
+			display: flex;
+			justify-content: space-between;
+			padding: 13px 2px 2px;
+			color: var(--muted);
+			font-size: 9px;
+		}
+
+		.portrait-note span:last-child { color: var(--red); }
+
+		.projects {
+			padding-block: 42px 72px;
+			border-top: 1px solid var(--line);
+			scroll-margin-top: 24px;
+		}
+
+		.section-head {
+			display: flex;
+			align-items: end;
+			justify-content: space-between;
+			gap: 24px;
+			margin-bottom: 26px;
+		}
+
+		.section-kicker { margin: 0 0 9px; color: var(--muted); }
+
+		h2 {
+			margin: 0;
+			font-family: var(--serif);
+			font-size: 34px;
+			font-weight: 500;
+		}
+
+		.repo-count { color: var(--muted); font: 11px var(--mono); }
+		.repo-list { border-top: 1px solid var(--line); }
+
+		.repo {
+			display: grid;
+			grid-template-columns: minmax(150px, 0.9fr) minmax(220px, 1.7fr) 110px 20px;
+			align-items: center;
+			gap: 22px;
+			min-height: 78px;
+			padding: 14px 4px;
+			border-bottom: 1px solid var(--line);
+			text-decoration: none;
+			transition: padding 180ms ease, background 180ms ease;
+		}
+
+		.repo:hover { padding-inline: 12px; background: #eeeee5; }
+		.repo-name { font-size: 15px; font-weight: 700; }
+		.repo-description { color: #64695f; font-size: 13px; line-height: 1.5; }
+		.repo-meta { color: var(--muted); font-size: 10px; }
+		.repo-arrow { color: var(--red); font-size: 18px; text-align: right; }
+
+		.loading, .empty-state {
+			padding: 26px 4px;
+			color: var(--muted);
+			font-size: 13px;
+		}
+
+		.footer {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 24px;
+			min-height: 82px;
+			border-top: 1px solid var(--line);
+		}
+
+		.footer-note { color: var(--muted); font-size: 10px; }
+
+		.footer a {
+			font-size: 12px;
+			font-weight: 600;
+			text-decoration-color: #a5aa9c;
+			text-underline-offset: 4px;
+		}
+
+		.reveal { animation: arrive 600ms both cubic-bezier(.2,.75,.3,1); }
+		.reveal-delay { animation-delay: 90ms; }
+
+		@keyframes arrive {
+			from { opacity: 0; transform: translateY(12px); }
+			to { opacity: 1; transform: translateY(0); }
+		}
+
+		@media (prefers-reduced-motion: reduce) {
+			*, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+		}
+
+		@media (max-width: 760px) {
+			.wrap { width: min(100% - 40px, 540px); }
+			.topbar { min-height: 70px; }
+			.nav { gap: 18px; }
+			.hero { grid-template-columns: 1fr; gap: 46px; padding-block: 60px 68px; }
+			.hero-copy { order: 0; }
+			.portrait-wrap { width: 220px; }
+			h1 { font-size: 56px; }
+			.repo { grid-template-columns: 1fr 24px; gap: 6px 16px; padding-block: 16px; }
+			.repo-description { grid-column: 1; grid-row: 2; }
+			.repo-meta { grid-column: 1; grid-row: 3; margin-top: 4px; }
+			.repo-arrow { grid-column: 2; grid-row: 1 / span 3; }
+		}
+
+		@media (max-width: 420px) {
+			.wrap { width: calc(100% - 32px); }
+			h1 { font-size: 46px; }
+			.nav { gap: 13px; font-size: 12px; }
+			.nav .github-link { gap: 5px; }
+			.github-link svg { width: 15px; height: 15px; }
+			.hero-links { gap: 16px; }
+			.button-link { padding-inline: 13px; }
+			.section-head { align-items: start; flex-direction: column; gap: 10px; }
+			.footer { align-items: start; flex-direction: column; justify-content: center; gap: 8px; padding-block: 18px; }
+		}
+	</style>
+</head>
+<body>
+	<header class="topbar wrap">
+		<a class="wordmark" href="#top" aria-label="Corentin, home">
+			<span class="mark" aria-hidden="true">c.</span>
+			<span>Corentin</span>
+		</a>
+		<nav class="nav" aria-label="Main navigation">
+			<a href="#projects">Projects</a>
+			<a class="github-link" href="https://github.com/cocorico84" target="_blank" rel="noreferrer">
+				<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .9a11.1 11.1 0 0 0-3.5 21.63c.56.1.76-.24.76-.54v-2.08c-3.1.67-3.76-1.32-3.76-1.32-.5-1.28-1.24-1.62-1.24-1.62-1.01-.7.08-.69.08-.69 1.12.08 1.7 1.15 1.7 1.15.99 1.7 2.6 1.21 3.23.92.1-.72.39-1.21.7-1.49-2.48-.28-5.08-1.24-5.08-5.52 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.05 1.15a10.6 10.6 0 0 1 5.55 0c2.11-1.44 3.05-1.15 3.05-1.15.61 1.54.23 2.68.11 2.96.72.78 1.15 1.78 1.15 3 0 4.29-2.6 5.24-5.09 5.51.4.35.76 1.03.76 2.08v3.06c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"/></svg>
+				GitHub
+			</a>
+		</nav>
+	</header>
+
+	<main id="top" class="wrap">
+		<section class="hero" aria-labelledby="intro-title">
+			<div class="hero-copy reveal">
+				<p class="eyebrow">A little corner of the internet</p>
+				<h1 id="intro-title">Hello, I'm Corentin.<br><span>Make yourself</span><br>at home.</h1>
+				<p class="intro">A place for the projects, experiments, and ideas I want to keep close. Have a look around.</p>
+				<div class="hero-links">
+					<a class="button-link" href="#projects">Explore projects <span aria-hidden="true">&#8595;</span></a>
+					<a class="text-link" href="https://github.com/cocorico84" target="_blank" rel="noreferrer">Find me on GitHub</a>
+				</div>
+			</div>
+			<figure class="portrait-wrap reveal reveal-delay">
+				<img src="https://github.com/cocorico84.png?size=512" alt="Corentin's GitHub profile picture" width="512" height="512">
+				<figcaption class="portrait-note"><span>Online, somewhere</span><span>Nice to meet you</span></figcaption>
+			</figure>
+		</section>
+
+		<section class="projects" id="projects" aria-labelledby="projects-title">
+			<div class="section-head">
+				<div>
+					<p class="section-kicker">A few things I've been making</p>
+					<h2 id="projects-title">Projects &amp; experiments</h2>
+				</div>
+				<span class="repo-count" id="repo-count" aria-live="polite">Loading from GitHub</span>
+			</div>
+			<div class="repo-list" id="repo-list" aria-live="polite">
+				<p class="loading">Fetching the latest projects&hellip;</p>
+			</div>
+		</section>
+	</main>
+
+	<footer class="footer wrap">
+		<span class="footer-note">Made with care, in a little corner of the web.</span>
+		<a href="https://github.com/cocorico84" target="_blank" rel="noreferrer">More on GitHub <span aria-hidden="true">&#8599;</span></a>
+	</footer>
+
+	<script>
+		const repositoryList = document.querySelector("#repo-list");
+		const repositoryCount = document.querySelector("#repo-count");
+
+		function showMessage(message) {
+			const paragraph = document.createElement("p");
+			paragraph.className = "empty-state";
+			paragraph.textContent = message;
+			repositoryList.replaceChildren(paragraph);
+		}
+
+		function createRepositoryRow(repository) {
+			const link = document.createElement("a");
+			link.className = "repo";
+			link.href = repository.html_url;
+			link.target = "_blank";
+			link.rel = "noreferrer";
+
+			const name = document.createElement("span");
+			name.className = "repo-name";
+			name.textContent = repository.name.replaceAll("-", " ");
+
+			const description = document.createElement("span");
+			description.className = "repo-description";
+			description.textContent = repository.description || "A project from my GitHub profile.";
+
+			const language = document.createElement("span");
+			language.className = "repo-meta";
+			language.textContent = repository.language || "Open source";
+
+			const arrow = document.createElement("span");
+			arrow.className = "repo-arrow";
+			arrow.setAttribute("aria-hidden", "true");
+			arrow.textContent = String.fromCharCode(8599);
+
+			link.append(name, description, language, arrow);
+			return link;
+		}
+
+		async function loadRepositories() {
+			try {
+				const response = await fetch("https://api.github.com/users/cocorico84/repos?sort=updated&per_page=100", {
+					headers: { Accept: "application/vnd.github+json" }
+				});
+				if (!response.ok) throw new Error("GitHub returned an error");
+
+				const repositories = (await response.json())
+					.filter(repository => !repository.fork && !repository.archived)
+					.slice(0, 6);
+
+				if (repositories.length === 0) {
+					repositoryCount.textContent = "A quiet moment";
+					showMessage("No public projects to show just yet. Check back soon.");
+					return;
+				}
+
+				repositoryList.replaceChildren(...repositories.map(createRepositoryRow));
+				repositoryCount.textContent = `${repositories.length} recent ${repositories.length === 1 ? "project" : "projects"}`;
+			} catch {
+				repositoryCount.textContent = "On GitHub";
+				showMessage("Projects couldn't load right now. You can still find them on GitHub.");
+			}
+		}
+
+		loadRepositories();
+	</script>
+</body>
+</html>
