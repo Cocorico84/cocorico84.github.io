@@ -1,11 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="theme-color" content="#f7f6f0">
-	<meta name="description" content="Corentin's corner of the internet: projects, experiments, and things worth keeping.">
-	<title>Corentin - a small corner of the internet</title>
+	<link rel="icon" type="image/svg+xml" href="favicon.svg">
+	<meta name="description" content="Corentin Zheng, ingénieur DevOps à Paris. Expériences, compétences techniques et projets.">
+	<title>Corentin Zheng - Ingénieur DevOps</title>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
@@ -228,6 +229,216 @@
 			scroll-margin-top: 24px;
 		}
 
+		.experience, .resume-details {
+			padding-block: 42px 68px;
+			border-top: 1px solid var(--line);
+			scroll-margin-top: 24px;
+		}
+
+		.experience-list { border-top: 1px solid var(--line); }
+
+		.experience-item {
+			display: grid;
+			grid-template-columns: 155px minmax(0, 1fr);
+			gap: 38px;
+			padding: 27px 4px 29px;
+			border-bottom: 1px solid var(--line);
+		}
+
+		.experience-period {
+			margin: 5px 0 0;
+			color: var(--muted);
+			font: 11px/1.7 var(--mono);
+			text-transform: uppercase;
+		}
+
+		.experience-place {
+			display: block;
+			margin-top: 7px;
+			font-family: var(--sans);
+			font-size: 11px;
+			line-height: 1.5;
+			text-transform: none;
+		}
+
+		.experience-heading {
+			display: flex;
+			align-items: baseline;
+			justify-content: space-between;
+			gap: 16px;
+		}
+
+		.company-identity {
+			display: flex;
+			min-width: 0;
+			align-items: center;
+			gap: 12px;
+		}
+
+		.company-logo {
+			display: block;
+			width: 60px;
+			height: 42px;
+			flex: 0 0 60px;
+			padding: 5px;
+			background: #fffefa;
+			border: 1px solid var(--line);
+			border-radius: 3px;
+			object-fit: contain;
+		}
+
+		.company-logo--wide { width: 112px; flex-basis: 112px; }
+
+		.experience-heading h3 {
+			margin: 0;
+			font-family: var(--serif);
+			font-size: 24px;
+			font-weight: 500;
+		}
+
+		.experience-role {
+			color: var(--muted);
+			font-size: 13px;
+			font-weight: 600;
+			text-align: right;
+		}
+
+		.experience-item ul {
+			display: grid;
+			gap: 7px;
+			margin: 15px 0 0;
+			padding-left: 18px;
+			color: #575c53;
+			font-size: 13px;
+			line-height: 1.65;
+		}
+
+		.experience-stack {
+			margin: 15px 0 0;
+			color: var(--muted);
+			font-size: 12px;
+			line-height: 1.7;
+		}
+
+		.experience-stack strong {
+			color: var(--ink);
+			font-weight: 600;
+		}
+
+		.resume-details { padding-bottom: 58px; }
+
+		.resume-grid {
+			display: grid;
+			grid-template-columns: 1.15fr 0.85fr;
+			gap: 68px;
+		}
+
+		.resume-column h3 {
+			margin: 0 0 18px;
+			font-family: var(--serif);
+			font-size: 24px;
+			font-weight: 500;
+		}
+
+		.skill-group, .study-item, .cert-item {
+			padding: 14px 0;
+			border-top: 1px solid var(--line);
+		}
+
+		.skill-group {
+		}
+
+		.study-item {
+			display: flex;
+			align-items: center;
+			gap: 14px;
+		}
+
+		.study-logo {
+			display: block;
+			width: 52px;
+			height: 52px;
+			flex: 0 0 52px;
+			padding: 3px;
+			background: #fff;
+			border: 1px solid var(--line);
+			border-radius: 3px;
+			object-fit: contain;
+		}
+
+		.study-copy { min-width: 0; }
+
+		.cert-item {
+			display: flex;
+			align-items: center;
+			gap: 14px;
+		}
+
+		.cert-logo {
+			display: block;
+			width: 52px;
+			height: 52px;
+			flex: 0 0 52px;
+			padding: 3px;
+			background: #fff;
+			border: 1px solid var(--line);
+			border-radius: 3px;
+			object-fit: contain;
+		}
+
+		.cert-copy { min-width: 0; flex: 1; }
+
+		.cert-copy strong {
+			margin-bottom: 3px;
+			line-height: 1.45;
+		}
+
+		.cert-meta {
+			margin: 0;
+			color: var(--muted);
+			font-size: 11px;
+			line-height: 1.6;
+		}
+
+		.cert-id { overflow-wrap: anywhere; }
+
+		.cert-link {
+			display: inline-block;
+			margin-top: 5px;
+			font-size: 11px;
+			font-weight: 600;
+			text-underline-offset: 3px;
+		}
+
+		.skill-group strong, .study-item strong, .cert-item strong {
+			display: block;
+			margin-bottom: 5px;
+			font-size: 13px;
+		}
+
+		.skill-group p, .study-item p, .cert-item p {
+			margin: 0;
+			color: var(--muted);
+			font-size: 12px;
+			line-height: 1.65;
+		}
+
+		.resume-subhead {
+			display: flex;
+			align-items: center;
+			gap: 9px;
+			margin-top: 32px !important;
+		}
+
+		.resume-contact {
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+			font-size: 13px;
+			font-weight: 600;
+			text-underline-offset: 4px;
+		}
+
 		.section-head {
 			display: flex;
 			align-items: end;
@@ -236,7 +447,35 @@
 			margin-bottom: 26px;
 		}
 
-		.section-kicker { margin: 0 0 9px; color: var(--muted); }
+		.section-kicker {
+			display: flex;
+			align-items: center;
+			gap: 9px;
+			margin: 0 0 9px;
+			color: var(--muted);
+		}
+
+		.section-icon {
+			display: inline-grid;
+			width: 27px;
+			height: 27px;
+			flex: 0 0 27px;
+			place-items: center;
+			background: #e8edda;
+			border: 1px solid #d9e2c1;
+			border-radius: 50%;
+			color: var(--ink);
+		}
+
+		.section-icon svg {
+			width: 15px;
+			height: 15px;
+			fill: none;
+			stroke: currentColor;
+			stroke-linecap: round;
+			stroke-linejoin: round;
+			stroke-width: 1.7;
+		}
 
 		h2 {
 			margin: 0;
@@ -283,6 +522,12 @@
 
 		.footer-note { color: var(--muted); font-size: 10px; }
 
+		.footer-links {
+			display: inline-flex;
+			align-items: center;
+			gap: 18px;
+		}
+
 		.footer a {
 			font-size: 12px;
 			font-weight: 600;
@@ -314,29 +559,38 @@
 			.repo-description { grid-column: 1; grid-row: 2; }
 			.repo-meta { grid-column: 1; grid-row: 3; margin-top: 4px; }
 			.repo-arrow { grid-column: 2; grid-row: 1 / span 3; }
+			.experience-item { grid-template-columns: 1fr; gap: 12px; padding-block: 22px; }
+			.experience-period { margin-top: 0; }
+			.resume-grid { grid-template-columns: 1fr; gap: 38px; }
 		}
 
 		@media (max-width: 420px) {
 			.wrap { width: calc(100% - 32px); }
 			h1 { font-size: 46px; }
-			.nav { gap: 13px; font-size: 12px; }
-			.nav .github-link { gap: 5px; }
-			.github-link svg { width: 15px; height: 15px; }
+			.topbar { gap: 8px; }
+			.wordmark { gap: 7px; font-size: 12px; }
+			.mark { width: 28px; height: 28px; font-size: 16px; }
+			.nav { gap: 9px; font-size: 11px; }
+			.nav .github-link { gap: 3px; }
+			.github-link svg { width: 14px; height: 14px; }
 			.hero-links { gap: 16px; }
 			.button-link { padding-inline: 13px; }
 			.section-head { align-items: start; flex-direction: column; gap: 10px; }
+			.experience-heading { align-items: start; flex-direction: column; gap: 4px; }
+			.experience-role { text-align: left; }
 			.footer { align-items: start; flex-direction: column; justify-content: center; gap: 8px; padding-block: 18px; }
 		}
 	</style>
 </head>
 <body>
 	<header class="topbar wrap">
-		<a class="wordmark" href="#top" aria-label="Corentin, home">
+		<a class="wordmark" href="#top" aria-label="Corentin, accueil">
 			<span class="mark" aria-hidden="true">c.</span>
 			<span>Corentin</span>
 		</a>
-		<nav class="nav" aria-label="Main navigation">
-			<a href="#projects">Projects</a>
+		<nav class="nav" aria-label="Navigation principale">
+			<a href="#experience">Parcours</a>
+			<a href="#projects">Projets</a>
 			<a class="github-link" href="https://github.com/cocorico84" target="_blank" rel="noreferrer">
 				<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .9a11.1 11.1 0 0 0-3.5 21.63c.56.1.76-.24.76-.54v-2.08c-3.1.67-3.76-1.32-3.76-1.32-.5-1.28-1.24-1.62-1.24-1.62-1.01-.7.08-.69.08-.69 1.12.08 1.7 1.15 1.7 1.15.99 1.7 2.6 1.21 3.23.92.1-.72.39-1.21.7-1.49-2.48-.28-5.08-1.24-5.08-5.52 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.05 1.15a10.6 10.6 0 0 1 5.55 0c2.11-1.44 3.05-1.15 3.05-1.15.61 1.54.23 2.68.11 2.96.72.78 1.15 1.78 1.15 3 0 4.29-2.6 5.24-5.09 5.51.4.35.76 1.03.76 2.08v3.06c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"/></svg>
 				GitHub
@@ -347,42 +601,208 @@
 	<main id="top" class="wrap">
 		<section class="hero" aria-labelledby="intro-title">
 			<div class="hero-copy reveal">
-				<p class="eyebrow">A little corner of the internet</p>
-				<h1 id="intro-title">Hello, I'm Corentin.<br><span>Make yourself</span><br>at home.</h1>
-				<p class="intro">A place for the projects, experiments, and ideas I want to keep close. Have a look around.</p>
+				<p class="eyebrow">Ingénieur DevOps · Paris</p>
+				<h1 id="intro-title">Construire.<br><span>Automatiser.</span><br>Fiabiliser.</h1>
+				<p class="intro">Je suis Corentin Zheng. J'automatise les infrastructures et fais évoluer des applications, du développement Python à la production sur Kubernetes.</p>
 				<div class="hero-links">
-					<a class="button-link" href="#projects">Explore projects <span aria-hidden="true">&#8595;</span></a>
-					<a class="text-link" href="https://github.com/cocorico84" target="_blank" rel="noreferrer">Find me on GitHub</a>
+					<a class="button-link" href="#experience">Voir mon parcours <span aria-hidden="true">&#8595;</span></a>
+					<a class="text-link" href="mailto:corentin.zheng@gmail.com">Me contacter</a>
 				</div>
 			</div>
 			<figure class="portrait-wrap reveal reveal-delay">
-				<img src="https://github.com/cocorico84.png?size=512" alt="Corentin's GitHub profile picture" width="512" height="512">
-				<figcaption class="portrait-note"><span>Online, somewhere</span><span>Nice to meet you</span></figcaption>
+				<img src="https://github.com/cocorico84.png?size=512" alt="Photo de profil de Corentin Zheng" width="512" height="512">
+				<figcaption class="portrait-note"><span>Corentin Zheng</span><span>DevOps</span></figcaption>
 			</figure>
+		</section>
+
+		<section class="experience" id="experience" aria-labelledby="experience-title">
+			<div class="section-head">
+				<div>
+					<p class="section-kicker"><span class="section-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18m-11 0v2h4v-2"/></svg></span>De Python à l'exploitation cloud</p>
+					<h2 id="experience-title">Expérience professionnelle</h2>
+				</div>
+				<span class="repo-count">2020 — aujourd'hui</span>
+			</div>
+			<div class="experience-list">
+				<article class="experience-item">
+					<p class="experience-period">Depuis oct. 2026<span class="experience-place">Fontenay-sous-Bois · CDI · Hybride</span></p>
+					<div>
+						<div class="experience-heading"><div class="company-identity"><img class="company-logo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Soci%C3%A9t%C3%A9_G%C3%A9n%C3%A9rale.svg" alt="" loading="lazy" decoding="async"><h3>Société Générale</h3></div><span class="experience-role">Ingénieur DevOps</span></div>
+						<ul><li>Évolution de l'API et résolution des incidents.</li></ul>
+						<p class="experience-stack"><strong>Environnement :</strong> Python, Flask, Kubernetes, Helm, Grafana, RabbitMQ, Ansible, IBM Cloud, GitHub Actions.</p>
+					</div>
+				</article>
+				<article class="experience-item">
+					<p class="experience-period">Jan. 2025 — oct. 2026<span class="experience-place">Montreuil · CDI · Hybride</span></p>
+					<div>
+						<div class="experience-heading"><div class="company-identity"><img class="company-logo" src="https://commons.wikimedia.org/wiki/Special:FilePath/BNP_Paribas.svg" alt="" loading="lazy" decoding="async"><h3>BNP Paribas</h3></div><span class="experience-role">Ingénieur Ops</span></div>
+						<ul><li>Prise en charge du support applicatif et résolution des incidents de production.</li><li>Suivi opérationnel à l'aide de tableaux de bord.</li></ul>
+						<p class="experience-stack"><strong>Environnement :</strong> Kubernetes, ArgoCD, Digital AI Release, OpenShift, Dynatrace, ELK, Sysdig, Kafka, Ansible, Terraform, Autosys, Jenkins, IBM Cloud, GitLab CI.</p>
+					</div>
+				</article>
+				<article class="experience-item">
+					<p class="experience-period">Avr. — nov. 2024<span class="experience-place">Ville de Paris · CDI</span></p>
+					<div>
+						<div class="experience-heading"><div class="company-identity"><img class="company-logo" src="https://www.google.com/s2/favicons?domain=azmed.co&amp;sz=128" alt="" loading="lazy" decoding="async"><h3>AZmed</h3></div><span class="experience-role">Ingénieur Ops</span></div>
+						<ul><li>Installation, configuration, supervision et maintenance d'infrastructures externes ; déploiement d'une application Python conteneurisée avec gestion de ses versions et correctifs.</li><li>Création et contribution au développement d'outils Ops internes.</li><li>Collaboration avec l'équipe Software pour améliorer le logiciel et développer les processus DevOps sur le cloud et on-premise.</li><li>Amélioration des processus CI/CD et rôle de référent technique auprès des clients.</li></ul>
+						<p class="experience-stack"><strong>Environnement :</strong> Linux, Docker, Kubernetes, Ansible, Terraform, OpenTelemetry, MongoDB Atlas, Python, AWS, GitHub CI/CD.</p>
+					</div>
+				</article>
+				<article class="experience-item">
+					<p class="experience-period">Jan. — déc. 2023<span class="experience-place">Ville de Paris · CDI · Hybride</span></p>
+					<div>
+						<div class="experience-heading"><div class="company-identity"><img class="company-logo" src="https://cdn.simpleicons.org/radiofrance" alt="" loading="lazy" decoding="async"><h3>Radio France</h3></div><span class="experience-role">Consultant DevOps</span></div>
+						<ul><li>Développement de playbooks pour déployer un hyperviseur ESXi de type 1, puis refactorisation des playbooks existants en rôles.</li><li>Mise en place d'un coffre-fort local avec Ansible Vault et standardisation des playbooks avec ansible-lint.</li><li>Création de jobs dans AWX et connexion de GitLab à AWX.</li></ul>
+						<p class="experience-stack"><strong>Environnement :</strong> Ansible, ESXi, Ansible Vault, AWX, GitLab.</p>
+					</div>
+				</article>
+				<article class="experience-item">
+					<p class="experience-period">Fév. — déc. 2022<span class="experience-place">Clermont-Ferrand · CDI</span></p>
+					<div>
+						<div class="experience-heading"><div class="company-identity"><img class="company-logo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Michelin-logo-blue%402x.webp" alt="" loading="lazy" decoding="async"><h3>Michelin</h3></div><span class="experience-role">Développeur Python</span></div>
+						<ul><li>Développement d'API from scratch : conception de la base de données et des endpoints, choix de l'ORM et mise en place de la BDD.</li><li>Intégration de modèles mathématiques et d'algorithmes dans une API.</li><li>Développement de pipelines CI/CD GitLab CI, avec ajout de tests Postman via Newman.</li><li>Amélioration d'APIs existantes : CI/CD centralisée, nouveaux endpoints, conteneurisation Docker et authentification sécurisée.</li></ul>
+						<p class="experience-stack"><strong>Environnement :</strong> FastAPI, Kubernetes, GitLab CI, Docker, Postman, Newman.</p>
+					</div>
+				</article>
+				<article class="experience-item">
+					<p class="experience-period">Fév. 2021 — jan. 2022<span class="experience-place">Ville de Paris · Alternance</span></p>
+					<div>
+						<div class="experience-heading"><div class="company-identity"><img class="company-logo company-logo--wide" src="https://careers-in-sport.co.uk/wp-content/uploads/2023/02/fanprime-logo-red.png" alt="" loading="lazy" decoding="async"><h3>fanprime</h3></div><span class="experience-role">Développeur back-end</span></div>
+						<ul><li>Développement de fonctionnalités, de routes API et de microservices (export CSV, QR code) en Python, Django et GraphQL.</li><li>Création d'environ 500 tests unitaires, pour une couverture de 90 %.</li><li>Documentation de l'API avec Swagger, docstrings, typing et MkDocs ; mise en œuvre du TDD, de l'intégration et du déploiement continus.</li><li>Participation au déploiement dans un environnement Docker et AWS.</li></ul>
+						<p class="experience-stack"><strong>Environnement :</strong> Scrum, Python, Django, GraphQL, Vue.js, Cosmos, Docker, AWS.</p>
+					</div>
+				</article>
+				<article class="experience-item">
+					<p class="experience-period">Mars — oct. 2020<span class="experience-place">Nanterre · CDI</span></p>
+					<div>
+						<div class="experience-heading"><div class="company-identity"><img class="company-logo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Orange_Business_Services_logo.svg" alt="" loading="lazy" decoding="async"><h3>Orange Business Services</h3></div><span class="experience-role">Développeur Python — DevOps</span></div>
+						<p class="experience-stack"><strong>Objectif :</strong> automatisation des tests et du paramétrage.</p>
+						<ul><li>Développement Python : pytest, programmation orientée objet appliquée aux tests et création de modules.</li><li>Automatisation de tests sur des réseaux et des infrastructures, déploiement de configurations et ordonnancement des tests.</li><li>Mise en place d'un environnement d'intégration continue.</li></ul>
+					</div>
+				</article>
+			</div>
+		</section>
+
+		<section class="resume-details" id="formation" aria-label="Compétences, formation et certifications">
+			<div class="resume-grid">
+				<div class="resume-column">
+					<p class="section-kicker"><span class="section-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m8 6-6 6 6 6m8-12 6 6-6 6m-3-14-2 16"/></svg></span>Boîte à outils</p>
+					<h3>Compétences techniques</h3>
+					<div class="skill-group"><strong>Développement &amp; API</strong><p>Python, Flask, Django, FastAPI, GraphQL</p></div>
+					<div class="skill-group"><strong>Cloud &amp; conteneurs</strong><p>Kubernetes, Docker, AWS, IBM Cloud, OpenShift</p></div>
+					<div class="skill-group"><strong>Automatisation &amp; CI/CD</strong><p>Ansible, Terraform, GitHub Actions, GitLab CI, Jenkins, AWX</p></div>
+					<div class="skill-group"><strong>Observabilité &amp; messagerie</strong><p>Grafana, Dynatrace, ELK, Sysdig, OpenTelemetry, RabbitMQ, Kafka</p></div>
+					<div class="skill-group"><strong>Compétences transversales</strong><p>Communication non violente, méthodes agiles, autonomie, apprentissage autodidacte</p></div>
+					<h3 class="resume-subhead"><span class="section-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M8.2 13.2 7 22l5-3 5 3-1.2-8.8M10 8l1.3 1.3L14 6.5"/></svg></span>Certifications &amp; langues</h3>
+					<div class="cert-item">
+						<img class="cert-logo" src="https://images.credly.com/images/940f2d1b-cefa-404b-bed8-9273e66a6b73/image.png" alt="" loading="lazy" decoding="async">
+						<div class="cert-copy">
+							<strong>Certified Kubernetes Administrator (CKA)</strong>
+							<p class="cert-meta">The Linux Foundation · Émise en mars 2025 · Expire en mars 2027</p>
+							<p class="cert-meta cert-id">Identifiant : LF-42zja2laeu</p>
+							<a class="cert-link" href="https://www.credly.com/earner/earned/badge/25a5bd63-b3e0-42cc-a582-f3e285031aec" target="_blank" rel="noreferrer">Afficher le badge <span aria-hidden="true">&#8599;</span></a>
+						</div>
+					</div>
+					<div class="cert-item">
+						<img class="cert-logo" src="https://images.credly.com/images/f28f1d88-428a-47f6-95b5-7da1dd6c1000/KCNA_badge.png" alt="" loading="lazy" decoding="async">
+						<div class="cert-copy">
+							<strong>Kubernetes and Cloud Native Associate</strong>
+							<p class="cert-meta">The Linux Foundation · Émise en oct. 2023 · Expire en oct. 2026</p>
+							<p class="cert-meta cert-id">Identifiant : LF-q9ry3794tg</p>
+							<a class="cert-link" href="https://www.credly.com/badges/b6efb3c0-1ae3-4071-ba21-f15f7a4e97a0" target="_blank" rel="noreferrer">Afficher le badge <span aria-hidden="true">&#8599;</span></a>
+						</div>
+					</div>
+					<div class="cert-item">
+						<img class="cert-logo" src="https://cdn.simpleicons.org/hashicorp" alt="" loading="lazy" decoding="async">
+						<div class="cert-copy">
+							<strong>HashiCorp Certified: Terraform Associate (002)</strong>
+							<p class="cert-meta">HashiCorp · Émise en mars 2023 · Expirée en mars 2025</p>
+							<a class="cert-link" href="https://www.credly.com/badges/bdccee7d-8160-49f4-a5ac-e673b1635480/public_url" target="_blank" rel="noreferrer">Afficher le badge <span aria-hidden="true">&#8599;</span></a>
+						</div>
+					</div>
+					<div class="cert-item">
+						<img class="cert-logo" src="https://www.google.com/s2/favicons?domain=linuxfoundation.org&amp;sz=128" alt="" loading="lazy" decoding="async">
+						<div class="cert-copy">
+							<strong>Linux Foundation Certified IT Associate</strong>
+							<p class="cert-meta">The Linux Foundation · Émise en mars 2023 · Expirée en mars 2026</p>
+							<p class="cert-meta cert-id">Identifiant : LF-4kx6vhjreg</p>
+							<a class="cert-link" href="https://www.credly.com/badges/ae0a87b5-3582-43c6-af2b-a22874e5db4e/public_url" target="_blank" rel="noreferrer">Afficher le badge <span aria-hidden="true">&#8599;</span></a>
+						</div>
+					</div>
+					<div class="cert-item">
+						<img class="cert-logo" src="https://www.google.com/s2/favicons?domain=aws.amazon.com&amp;sz=128" alt="" loading="lazy" decoding="async">
+						<div class="cert-copy">
+							<strong>AWS Cloud Practitioner</strong>
+							<p class="cert-meta">Amazon Web Services · Émise en févr. 2023 · Expirée en févr. 2026</p>
+							<p class="cert-meta cert-id">Identifiant : THP8ECLCTBBEQQ31</p>
+							<a class="cert-link" href="https://www.credly.com/badges/16673c7f-144c-422b-854f-87d42337b992/public_url" target="_blank" rel="noreferrer">Afficher le badge <span aria-hidden="true">&#8599;</span></a>
+						</div>
+					</div>
+					<div class="cert-item">
+						<img class="cert-logo" src="https://www.google.com/s2/favicons?domain=simplon.co&amp;sz=128" alt="" loading="lazy" decoding="async">
+						<div class="cert-copy">
+							<strong>Méthodes agiles de gestion et amorçage de projet</strong>
+							<p class="cert-meta">Simplon.co · Émise en juin 2019</p>
+							<a class="cert-link" href="https://www.dropbox.com/s/gysnc5dg6dkiixu/ZHENG%20Corentin%20Certification%20AGILITE.pdf?dl=0" target="_blank" rel="noreferrer">Afficher le diplôme <span aria-hidden="true">&#8599;</span></a>
+						</div>
+					</div>
+					<div class="cert-item">
+						<img class="cert-logo" src="https://www.google.com/s2/favicons?domain=protection-civile.org&amp;sz=128" alt="" loading="lazy" decoding="async">
+						<div class="cert-copy">
+							<strong>Prévention et Secours Civique de niveau 1 (PSC1)</strong>
+							<p class="cert-meta">Protection Civile Paris Seine · Émise en févr. 2016</p>
+							<p class="cert-meta cert-id">Identifiant : PSC1-626149</p>
+							<a class="cert-link" href="https://www.dropbox.com/s/dalzzkf8c8qtq6w/PSC1_diploma_31568.pdf?dl=0" target="_blank" rel="noreferrer">Afficher le diplôme <span aria-hidden="true">&#8599;</span></a>
+						</div>
+					</div>
+					<div class="cert-item"><div class="cert-copy"><strong>Anglais</strong><p>Pratique professionnelle</p></div></div>
+				</div>
+				<div class="resume-column">
+					<p class="section-kicker"><span class="section-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m22 10-10-5L2 10l10 5 10-5ZM6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5m4-2v6"/></svg></span>Apprendre &amp; transmettre</p>
+					<h3>Formation</h3>
+					<div class="study-item"><img class="study-logo" src="https://www.google.com/s2/favicons?domain=openclassrooms.com&amp;sz=128" alt="" loading="lazy" decoding="async"><div class="study-copy"><strong>OpenClassrooms</strong><p>Développeur d'application Python, RNCP niveau 6 · 2022</p></div></div>
+					<div class="study-item"><img class="study-logo" src="https://th.bing.com/th/id/OIP.a-qItulhRGapsKqpw7AgHAHaHa?pid=ImgRaw&amp;r=0" alt="" loading="lazy" decoding="async"><div class="study-copy"><strong>Agility Factory</strong><p>Formation professionnelle développeur Python backend API · 2019</p></div></div>
+					<div class="study-item"><img class="study-logo" src="https://www.google.com/s2/favicons?domain=simplon.co&amp;sz=128" alt="" loading="lazy" decoding="async"><div class="study-copy"><strong>Simplon.co</strong><p>Certification RNCP niveau 5, concevoir et exploiter une base de données · 2018</p></div></div>
+					<div class="study-item"><img class="study-logo" src="https://upload.wikimedia.org/wikipedia/fr/thumb/5/57/UPMC_Sorbonne_Universites.svg/langfr-250px-UPMC_Sorbonne_Universites.svg.png" alt="" loading="lazy" decoding="async"><div class="study-copy"><strong>Université Pierre et Marie Curie (Paris VI)</strong><p>Master de botanique · 2015</p></div></div>
+					<h3 class="resume-subhead"><span class="section-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>Un projet en tête ?</h3>
+					<a class="resume-contact" href="mailto:corentin.zheng@gmail.com">corentin.zheng@gmail.com <span aria-hidden="true">&#8599;</span></a>
+				</div>
+			</div>
 		</section>
 
 		<section class="projects" id="projects" aria-labelledby="projects-title">
 			<div class="section-head">
 				<div>
-					<p class="section-kicker">A few things I've been making</p>
-					<h2 id="projects-title">Projects &amp; experiments</h2>
+					<p class="section-kicker"><span class="section-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z"/><path d="m10 11-2 2 2 2m4-4 2 2-2 2"/></svg></span>Code &amp; expérimentations</p>
+					<h2 id="projects-title">Projets récents</h2>
 				</div>
-				<span class="repo-count" id="repo-count" aria-live="polite">Loading from GitHub</span>
+				<span class="repo-count" id="repo-count" aria-live="polite">Chargement depuis GitHub</span>
 			</div>
 			<div class="repo-list" id="repo-list" aria-live="polite">
-				<p class="loading">Fetching the latest projects&hellip;</p>
+				<p class="loading">Récupération des projets récents&hellip;</p>
 			</div>
 		</section>
 	</main>
 
 	<footer class="footer wrap">
-		<span class="footer-note">Made with care, in a little corner of the web.</span>
-		<a href="https://github.com/cocorico84" target="_blank" rel="noreferrer">More on GitHub <span aria-hidden="true">&#8599;</span></a>
+		<span class="footer-note">Corentin Zheng · Ingénieur DevOps · Paris</span>
+		<div class="footer-links">
+			<a href="https://www.linkedin.com/in/corentin-zheng/" target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">&#8599;</span></a>
+			<a href="https://github.com/cocorico84" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">&#8599;</span></a>
+		</div>
 	</footer>
 
 	<script>
 		const repositoryList = document.querySelector("#repo-list");
 		const repositoryCount = document.querySelector("#repo-count");
+		const repositoryDescriptions = new Map([
+			["cocorico84.github.io", "Portfolio professionnel présentant mon parcours DevOps, mes compétences, mes certifications et mes projets."],
+			["personal_site", "Site personnel Django avec blog et jeu d'enquête interactif, accompagné d'une infrastructure Docker, Kubernetes et Terraform."],
+			["count2tree", "Application Vue et Python pour repérer les arbres par ville et sensibiliser à l'environnement. Favoris, graphiques et connexion sont prévus."],
+			["webscraping-brasserie", "Notebooks qui extraient les plats et les prix du menu du restaurant Côté d'Argent, exportent les données et analysent les mots les plus fréquents."],
+			["cocorico84", "README de profil présentant mon positionnement Backend Developer & DevOps et mes compétences techniques."],
+			["oc_lettings", "Site Django de locations dans le comté d'Orange, avec annonces, fiches de logements et profils indiquant leur ville favorite."]
+		]);
 
 		function showMessage(message) {
 			const paragraph = document.createElement("p");
@@ -404,7 +824,7 @@
 
 			const description = document.createElement("span");
 			description.className = "repo-description";
-			description.textContent = repository.description || "A project from my GitHub profile.";
+			description.textContent = repositoryDescriptions.get(repository.name.toLowerCase()) || repository.description || "Un projet de mon profil GitHub.";
 
 			const language = document.createElement("span");
 			language.className = "repo-meta";
@@ -431,16 +851,16 @@
 					.slice(0, 6);
 
 				if (repositories.length === 0) {
-					repositoryCount.textContent = "A quiet moment";
-					showMessage("No public projects to show just yet. Check back soon.");
+					repositoryCount.textContent = "Aucun projet public";
+					showMessage("Aucun projet public à afficher pour le moment.");
 					return;
 				}
 
 				repositoryList.replaceChildren(...repositories.map(createRepositoryRow));
-				repositoryCount.textContent = `${repositories.length} recent ${repositories.length === 1 ? "project" : "projects"}`;
+				repositoryCount.textContent = `${repositories.length} projet${repositories.length === 1 ? "" : "s"} récent${repositories.length === 1 ? "" : "s"}`;
 			} catch {
-				repositoryCount.textContent = "On GitHub";
-				showMessage("Projects couldn't load right now. You can still find them on GitHub.");
+				repositoryCount.textContent = "Sur GitHub";
+				showMessage("Les projets ne sont pas disponibles pour le moment. Retrouvez-les sur GitHub.");
 			}
 		}
 
